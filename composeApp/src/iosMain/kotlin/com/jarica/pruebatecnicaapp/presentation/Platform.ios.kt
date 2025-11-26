@@ -1,6 +1,5 @@
-package com.jarica.pruebatecnicaapp
+package com.jarica.pruebatecnicaapp.presentation
 
-import com.jarica.pruebatecnicaapp.presentation.Platform
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {
