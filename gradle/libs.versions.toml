@@ -17,8 +17,7 @@ kotlinSerialization = "1.9.0"
 koin = "4.1.1"
 koinCompose = "4.1.1"
 koinComposeViewModel = "4.1.1"
-ktor = "2.3.5"
-
+ktor = "3.3.3"
 
 
 
@@ -53,6 +52,7 @@ ktor-serialization = {module = "io.ktor:ktor-serialization-kotlinx-json", versio
 
 #Serialización
 kotlin-serialization-json = {module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization"}
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

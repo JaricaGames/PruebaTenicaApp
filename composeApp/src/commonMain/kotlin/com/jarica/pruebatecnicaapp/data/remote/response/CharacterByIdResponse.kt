@@ -6,16 +6,21 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CharacterByIdResponse (
-    @SerialName("id") val id: String,
+    @SerialName("id") val id: Int,
     @SerialName("status") val status: String,
     @SerialName("image") val image: String,
+    @SerialName("name") val name: String,
+
 ) {
+
     fun toDomain(): CharacterModel {
         return CharacterModel(
-            id = id,
+            id = id.toString(),
             status = status,
             image = image,
+            name = name
         )
     }
+
 }
 

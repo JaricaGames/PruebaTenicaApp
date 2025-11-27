@@ -24,7 +24,10 @@ fun NavigationWrapper(){
         }
 
         composable<HomeScreenObject> {
-            HomeScreen()
+            HomeScreen(
+                onCharacterOfTheDayClick = { navController.navigate(CharacterOfTheDayScreenObject) },
+                onCharacterListClick = { navController.navigate(ListScreenObject) }
+            )
         }
 
 
