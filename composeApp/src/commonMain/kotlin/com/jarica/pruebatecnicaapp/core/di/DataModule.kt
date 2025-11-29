@@ -1,5 +1,6 @@
 package com.jarica.pruebatecnicaapp.core.di
 
+import androidx.datastore.core.DataStore
 import com.jarica.pruebatecnicaapp.core.BASE_URL
 import com.jarica.pruebatecnicaapp.data.RepositoryImpl
 import com.jarica.pruebatecnicaapp.data.remote.ApiService
@@ -37,4 +38,5 @@ val dataModule = module {
 
     //Inyecccion del repository
     factory<Repository> { RepositoryImpl(get()) }
+
 }

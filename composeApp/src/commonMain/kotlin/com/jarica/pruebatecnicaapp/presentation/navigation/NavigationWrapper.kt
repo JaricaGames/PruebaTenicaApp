@@ -11,7 +11,7 @@ import com.jarica.pruebatecnicaapp.presentation.screens.homeScreen.HomeScreen
 import com.jarica.pruebatecnicaapp.presentation.screens.listScreen.ListScreen
 
 @Composable
-fun NavigationWrapper(){
+fun NavigationWrapper() {
      val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = HomeScreenObject){

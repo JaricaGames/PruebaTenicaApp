@@ -52,6 +52,8 @@ kotlin {
             implementation(libs.ktor.serialization)
             implementation(libs.coil.compose)
             implementation(libs.coil.ktor)
+            implementation(libs.datastore.preferences)
+            implementation(libs.atomicfu)
 
         }
         iosMain.dependencies {

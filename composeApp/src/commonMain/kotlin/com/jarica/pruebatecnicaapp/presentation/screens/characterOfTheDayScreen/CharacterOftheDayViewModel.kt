@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class CharacterOftheDayViewModel(
-    val getRandomCharacter: GetRandomCharacterUseCase
+    val getRandomCharacter: GetRandomCharacterUseCase,
 ): ViewModel() {
 
     private val _state = MutableStateFlow<CharacterOfTheDayScreenState>(CharacterOfTheDayScreenState())
