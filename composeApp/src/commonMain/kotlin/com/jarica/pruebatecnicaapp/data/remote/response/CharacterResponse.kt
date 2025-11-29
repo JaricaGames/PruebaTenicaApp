@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CharacterByIdResponse (
+data class CharacterResponse (
     @SerialName("id") val id: Int,
     @SerialName("status") val status: String,
     @SerialName("image") val image: String,

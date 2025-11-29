@@ -18,7 +18,7 @@ koin = "4.1.1"
 koinCompose = "4.1.1"
 koinComposeViewModel = "4.1.1"
 ktor = "3.3.3"
-
+coil = "3.3.0"
 
 
 
@@ -52,6 +52,10 @@ ktor-serialization = {module = "io.ktor:ktor-serialization-kotlinx-json", versio
 
 #Serialización
 kotlin-serialization-json = {module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization"}
+
+#Coil
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor3", version.ref = "coil" }
 
 
 [plugins]

@@ -4,8 +4,8 @@ import com.jarica.pruebatecnicaapp.domain.models.CharacterModel
 
 interface Repository {
 
-    suspend fun getCharacterById(id:String): CharacterModel {
-        TODO("Not yet implemented")
-
-    }
+    suspend fun getCharacterById(id:String): CharacterModel
+    suspend fun getCharactersList(): List<CharacterModel>
 }
+
+
