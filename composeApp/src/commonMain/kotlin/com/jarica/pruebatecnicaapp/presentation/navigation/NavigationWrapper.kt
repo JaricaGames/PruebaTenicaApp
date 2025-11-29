@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.jarica.pruebatecnicaapp.presentation.screens.characterOfTheDayScreen.CharacterOfTheDayScreen
 import com.jarica.pruebatecnicaapp.presentation.screens.detailScreen.DetailScreen
 import com.jarica.pruebatecnicaapp.presentation.screens.homeScreen.HomeScreen
@@ -16,11 +17,19 @@ fun NavigationWrapper(){
     NavHost(navController = navController, startDestination = HomeScreenObject){
 
         composable<ListScreenObject> {
-            ListScreen()
+            ListScreen(
+                onCharacterClick = { idCharacter ->
+                    navController.navigate(DetailScreenObject(idCharacter = idCharacter))
+                    },
+                onBackPress = { navController.popBackStack() }
+            )
+
         }
 
-        composable<DetailScreenObject> {
-            DetailScreen()
+        composable<DetailScreenObject> { backStackEntry ->
+
+            val detailScreen: DetailScreenObject = backStackEntry.toRoute()
+            DetailScreen(detailScreen.idCharacter, onBackPress = { navController.popBackStack() })
         }
 
         composable<HomeScreenObject> {
@@ -29,7 +38,6 @@ fun NavigationWrapper(){
                 onCharacterListClick = { navController.navigate(ListScreenObject) }
             )
         }
-
 
         composable<CharacterOfTheDayScreenObject> {
             CharacterOfTheDayScreen()

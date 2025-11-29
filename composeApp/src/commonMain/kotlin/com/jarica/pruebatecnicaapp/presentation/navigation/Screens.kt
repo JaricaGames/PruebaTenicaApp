@@ -7,7 +7,9 @@ import kotlinx.serialization.Serializable
 data object HomeScreenObject
 
 @Serializable
-data object DetailScreenObject
+data class DetailScreenObject(
+    val idCharacter: Int,
+)
 
 @Serializable
 data object ListScreenObject

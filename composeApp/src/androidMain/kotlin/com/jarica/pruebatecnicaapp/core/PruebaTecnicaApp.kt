@@ -10,6 +10,7 @@ class PruebaTecnicaApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         //Inicializamos Koin
         initKoin {
             androidLogger()
