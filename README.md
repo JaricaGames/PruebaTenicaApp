@@ -53,5 +53,5 @@ Lo primero que me gustaría comentar es que la aplicación esta solo comprobada 
 
 ---
 
-##👀 Nota final
-Muchas gracias por la posibilidad de mostrar mis conocimientos.
+## 👀 Nota final
+- Muchas gracias por la posibilidad de mostrar mis conocimientos.
