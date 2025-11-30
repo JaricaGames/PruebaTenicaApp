@@ -39,7 +39,7 @@ Ejecuta en tu emulador o dispositivo.
 
 ---
 
-##🐞 TODO
+## 🐞 ToDo
 
 Hay algunas implementaciones que me hubiese gustado implementar pero me ha faltado tiempo:
 	- **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
