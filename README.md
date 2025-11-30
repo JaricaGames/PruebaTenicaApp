@@ -7,8 +7,7 @@ algunas de las herramientas que conozco, y la forma en la que estructuro el cód
 
 Los datos los he usado de la API publica de Rick & Morty - https://rickandmortyapi.com/
 
-Lo primero que me gustaría comentar es que la aplicación esta solo comprobada en Android, no dispongo de entorno iOs, por lo que no es
-posible compilarla. Se podría compilar para iOs, pero me sorprendería que no crashease
+Lo primero que me gustaría comentar es que la aplicación esta solo comprobada en Android, no dispongo de entorno iOs, por lo que no tengo la posibilidad de compilarla. Se podría compilar para iOs, pero me sorprendería que no crashease
 
 ---
 
@@ -38,15 +37,21 @@ posible compilarla. Se podría compilar para iOs, pero me sorprendería que no c
 
 ---
 
-## 🐞 ToDo
+##🐞 ToDo
 - **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
 - **Paginación**: la API lo permite, asi el listado de personajes podría salir entero. 
-- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras siempre apareciese el último que aparecido pero me quede sin tiempo para llevarlo a cabo. 
+- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras siempre apareciese el último que aparecio pero me quede sin tiempo para llevarlo a cabo. 
 
+---
 
-##📜 Licencia
-Este proyecto está bajo la licencia MIT.
-O sea: úsalo, compártelo, modifícalo... pero si tu grupo se pelea por culpa de la app, no es responsabilidad nuestra. 😅
+##📜 Explicación del proyecto
+Para mostrar la forma en la que estructuro mi código, y según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
+	- **Domain**: capa de dominio, no sabe que esta pasando en las siguientes capas, es donde se encuentra la lógica de negocio, la aplicación es pequeña y no es realmente necesario haber creado ningún caso de uso, pero he creado dos para mostrar conocimientos. En esta capa se encuentra el repositorio
+	- **Data**: capa de datos, es la siguiente capa, a través de la implementación del repositorio y el ApiService recoge los datos de la API. Tiene su propio modelo de datos, por lo que tiene que mapearlos al modelo de dominio.
+	- **Presentation**: es la capa de UI, en ella se encuentra todas las pantallas, los viewModels, y la navegación. No dispone de modelo de datos propios por que no lo he creído necesario, usa el modelo de datos del dominio.
+	- **core**: Es un directorio general para toda la aplicación, en el he metido la inyección de dependencias y un archivo con algunas constantes necesarias para la app.
+
+---
 
 ##👀 Nota final
-Recuerda: una amistad rota por 3€ no vale la pena... pero una app que te los recuerda sí.
+Muchas gracias por la posibilidad de mostrar mis conocimientos.
