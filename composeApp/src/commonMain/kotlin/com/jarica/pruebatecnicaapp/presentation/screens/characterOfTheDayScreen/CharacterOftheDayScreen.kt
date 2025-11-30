@@ -12,14 +12,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -32,10 +31,11 @@ import com.jarica.pruebatecnicaapp.domain.models.CharacterModel
 import com.jarica.pruebatecnicaapp.presentation.Blue
 import com.jarica.pruebatecnicaapp.presentation.Grey
 import com.jarica.pruebatecnicaapp.presentation.Red
+import com.jarica.pruebatecnicaapp.presentation.screens.components.CustomButton
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun CharacterOfTheDayScreen() {
+fun CharacterOfTheDayScreen(onBackPress: () -> Boolean) {
 
     val characterOfTheDayViewModel = koinViewModel<CharacterOftheDayViewModel>()
     val state by characterOfTheDayViewModel.state.collectAsState()
@@ -47,12 +47,24 @@ fun CharacterOfTheDayScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
+        Row() {
+            CustomButton(
+                modifier = Modifier.width(150.dp),
+                text = "Atras",
+                onClick = {onBackPress()}
+            )
+            Spacer(modifier = Modifier.weight(1f))
+        }
+        Spacer(modifier = Modifier.height(20.dp))
         CharacterOfTheDayCard(state.randomCharacter)
         Spacer(modifier = Modifier.height(20.dp))
-        Button(onClick = { characterOfTheDayViewModel.OnCharacterOfTheDayClick() }) {
-            Text("Character of the day")
-        }
+        CustomButton(
+            modifier = Modifier,
+            text = "Personaje Random",
+            onClick = { characterOfTheDayViewModel.OnCharacterOfTheDayClick() }
+        )
+
+
     }
 
 }
@@ -81,7 +93,7 @@ fun CharacterOfTheDayCard(character: CharacterModel? = null) { // Inicializamos 
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                CircularProgressIndicator()
+                Text("Pulse en Personaje Random")
             }
         } else {
             Row(

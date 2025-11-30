@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.jarica.pruebatecnicaapp.presentation.screens.components.CustomButton
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -28,16 +29,26 @@ fun HomeScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally) {
 
-        Button(
+        CustomButton(
+            modifier = Modifier,
+            text = "Personaje Random",
+            onClick = { onCharacterOfTheDayClick() }
+        )
+ /*       Button(
             onClick = { onCharacterOfTheDayClick() }){
             Text("Character of the day")
-        }
+        }*/
         Spacer(modifier = Modifier.height(20.dp))
-        Button(
+        CustomButton(
+            modifier = Modifier,
+            text = "Lista de Personajes",
+            onClick = { onCharacterListClick() }
+        )
+        /*Button(
             onClick = { onCharacterListClick() }){
             Text("Character List")
         }
-
+*/
     }
 
 

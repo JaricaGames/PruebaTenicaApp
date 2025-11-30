@@ -28,6 +28,7 @@ import coil3.compose.AsyncImage
 import com.jarica.pruebatecnicaapp.presentation.Blue
 import com.jarica.pruebatecnicaapp.presentation.Grey
 import com.jarica.pruebatecnicaapp.presentation.Red
+import com.jarica.pruebatecnicaapp.presentation.screens.components.CustomButton
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -86,10 +87,11 @@ fun DetailScreen(idCharacter: Int, onBackPress: () -> Boolean) {
 
         }
         Spacer(modifier = Modifier.size(16.dp))
-        Button(onClick = {onBackPress()}, modifier = Modifier.fillMaxWidth()){
-            Text("Atras")
-        }
-
+        CustomButton(
+            modifier = Modifier,
+            text = "Atras",
+            onClick = {onBackPress()}
+        )
 
     }
 

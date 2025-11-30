@@ -41,7 +41,9 @@ fun NavigationWrapper() {
         }
 
         composable<CharacterOfTheDayScreenObject> {
-            CharacterOfTheDayScreen()
+            CharacterOfTheDayScreen(
+                onBackPress = { navController.popBackStack() }
+            )
         }
 
 
