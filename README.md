@@ -37,15 +37,15 @@ Lo primero que me gustaría comentar es que la aplicación esta solo comprobada 
 
 ---
 
-##🐞 ToDo
+## 🐞 ToDo
 - **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
 - **Paginación**: la API lo permite, asi el listado de personajes podría salir entero. 
 - **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras siempre apareciese el último que aparecio pero me quede sin tiempo para llevarlo a cabo. 
 
 ---
 
-##📜 Explicación del proyecto
-Para mostrar la forma en la que estructuro mi código, y según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
+## 📜 Explicación del proyecto
+- Para mostrar la forma en la que estructuro mi código, y según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
 	- **Domain**: capa de dominio, no sabe que esta pasando en las siguientes capas, es donde se encuentra la lógica de negocio, la aplicación es pequeña y no es realmente necesario haber creado ningún caso de uso, pero he creado dos para mostrar conocimientos. En esta capa se encuentra el repositorio
 	- **Data**: capa de datos, es la siguiente capa, a través de la implementación del repositorio y el ApiService recoge los datos de la API. Tiene su propio modelo de datos, por lo que tiene que mapearlos al modelo de dominio.
 	- **Presentation**: es la capa de UI, en ella se encuentra todas las pantallas, los viewModels, y la navegación. No dispone de modelo de datos propios por que no lo he creído necesario, usa el modelo de datos del dominio.
