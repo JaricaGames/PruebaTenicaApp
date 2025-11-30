@@ -38,7 +38,10 @@ import com.jarica.pruebatecnicaapp.presentation.Red
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun ListScreen(onCharacterClick: (Int) -> Unit, onBackPress: () -> Boolean) {
+fun ListScreen(
+    onCharacterClick: (Int) -> Unit,
+    onBackPress: () -> Boolean
+) {
     val listScreenViewModel = koinViewModel<ListScreenViewModel>()
     val uiState by listScreenViewModel.uiState.collectAsState()
 

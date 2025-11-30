@@ -70,7 +70,9 @@ fun CharacterOfTheDayScreen(onBackPress: () -> Boolean) {
 }
 
 @Composable
-fun CharacterOfTheDayCard(character: CharacterModel? = null) { // Inicializamos a null para que el componente compruebe si hay model de datos o no, y asi mostrar una cosa u otra
+fun CharacterOfTheDayCard(
+    character: CharacterModel? = null // Inicializamos a null para que el componente compruebe si hay model de datos o no, y asi mostrar una cosa u otra
+) {
 
     Card(
         modifier = Modifier

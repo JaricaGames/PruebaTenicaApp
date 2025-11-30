@@ -18,19 +18,14 @@ class CharacterOftheDayViewModel(
     private val _state = MutableStateFlow<CharacterOfTheDayScreenState>(CharacterOfTheDayScreenState())
     val state: StateFlow<CharacterOfTheDayScreenState> = _state
 
-
     fun OnCharacterOfTheDayClick(){
 
         viewModelScope.launch {
-
             val result = withContext(Dispatchers.IO){
                 getRandomCharacter()
             }
             _state.update { it.copy(randomCharacter = result) } // ACtualizamos el estado con el nuevo personaje
-
-
         }
-
     }
 
 
