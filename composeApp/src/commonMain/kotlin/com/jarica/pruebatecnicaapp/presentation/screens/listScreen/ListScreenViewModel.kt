@@ -13,15 +13,11 @@ import kotlinx.coroutines.withContext
 
 class ListScreenViewModel(
     private val repository: Repository,
-    val getRandomCharacter: GetRandomCharacterUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<ListScreenState>(ListScreenState.Loading)
     val uiState: StateFlow<ListScreenState> = _uiState
 
-    companion object{
-        val idCharacter: Int = 0
-    }
      init {
         getAllCharacters()
     }

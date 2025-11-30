@@ -40,16 +40,30 @@ Lo primero que me gustaría comentar es que la aplicación esta solo comprobada 
 ## 🐞 ToDo
 - **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
 - **Paginación**: la API lo permite, asi el listado de personajes podría salir entero. 
-- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras siempre apareciese el último que aparecio pero me quede sin tiempo para llevarlo a cabo. 
+- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que al abrir la aplicación de nuevo siempre apareciese el último que apareció si era el mismo dia o uno nuevo si era otro dia, pero me quede sin tiempo para llevarlo a cabo. De ahí que cuando la cree la pantalla se llame CharacterOftheDayScreen
 
 ---
 
-## 📜 Explicación del proyecto
-- Para mostrar la forma en la que estructuro mi código, y según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
+## 📜 Arquitectura
+- Según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
 	- **Domain**: es la capa de dominio, no sabe que esta pasando en las siguientes capas, en ella se encuentra la lógica de negocio y los casos de uso, la aplicación es pequeña y no es realmente necesario haber creado ningún caso de uso, pero he creado dos para mostrar conocimientos. En esta capa se encuentra el repositorio
 	- **Data**: es la capa de datos, a través de la implementación del repositorio y el ApiService recoge los datos de la API. Tiene su propio modelo de datos, por lo que tiene que mapearlos al modelo de dominio.
 	- **Presentation**: es la capa de UI, cada pantalla tiene su propio directorio donde están incluidos los composables, los estados y los viewmodels de cada pantalla, existe también el directorio de navegación, que se encarga de gestionar toda la navegación a través de navigationwrapper. No dispone de modelo de datos propios por que no lo he creído necesario, usa el modelo de datos del dominio.
 	- **core**: Es un directorio general para toda la aplicación, en el he metido la inyección de dependencias por que afecta a todas la aplicacion y un archivo con algunas constantes necesarias para la app.
+
+---
+
+## 📜 Conocimientos a mostrar.
+	- **Llamadas a EndPoint**: El ApiService se encarga de realizar la llamada a la API.
+	- **Corrutinas**: Todas las llamadas a la API se realiza mediante corrutinas que se realizan fuera del hilo principal para no bloquearlo.
+	- **Repositorio e implementación de repositorio**: Junto con el ApiService se encarga de gestionar las llamadas a la API
+	- **Compose Multiplatform**: La UI se ha desarrollado completamente en compose multiplatform.
+	- **MVVM**: Cada screen tiene su propio MVVM
+	- **Manejo de estados**: Tanto listScreen como CharacterOftheDay tiene su propio manejo de estados. listScreenState tiene un manejor de datos con estados, loading, error, success.
+	- **Navigation Compose**: La navegación se realiza con navigation compose, como buena practica se pasa a las pantallas como navegar y no se pasa a las pantallas el navController directamente para que sea el NavigationWrapper y solo él quien se encargue de realizar navegaciones.
+	- **Inyeccion de dependencias**: Toda la inyección de dependencias la realiza Koin, se tiene que iniciar Koin tanto en Android como en iOs
+	- **Creacion de composables personalizados**: He creado un botón personalizado para que sea el mismo en toda la app, asi el código queda mas limpio, fácil de leer y es mucho mas escalable
+	- **Encapsulacion de variables**: Las variables de los viewModel tiene su versión publica y privada, las screen se enganchan a las publicas que son solo de lectura para que sea solo el viewModel el que pueda modificarlas.
 
 ---
 
