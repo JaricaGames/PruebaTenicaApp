@@ -46,10 +46,10 @@ Lo primero que me gustaría comentar es que la aplicación esta solo comprobada 
 
 ## 📜 Explicación del proyecto
 - Para mostrar la forma en la que estructuro mi código, y según los principio de clean arquitectura y beunas practicas, he creado 3 directorios principales (data, domain, presentación) mas 1 directorio core:
-	- **Domain**: capa de dominio, no sabe que esta pasando en las siguientes capas, es donde se encuentra la lógica de negocio, la aplicación es pequeña y no es realmente necesario haber creado ningún caso de uso, pero he creado dos para mostrar conocimientos. En esta capa se encuentra el repositorio
-	- **Data**: capa de datos, es la siguiente capa, a través de la implementación del repositorio y el ApiService recoge los datos de la API. Tiene su propio modelo de datos, por lo que tiene que mapearlos al modelo de dominio.
-	- **Presentation**: es la capa de UI, en ella se encuentra todas las pantallas, los viewModels, y la navegación. No dispone de modelo de datos propios por que no lo he creído necesario, usa el modelo de datos del dominio.
-	- **core**: Es un directorio general para toda la aplicación, en el he metido la inyección de dependencias y un archivo con algunas constantes necesarias para la app.
+	- **Domain**: es la capa de dominio, no sabe que esta pasando en las siguientes capas, en ella se encuentra la lógica de negocio y los casos de uso, la aplicación es pequeña y no es realmente necesario haber creado ningún caso de uso, pero he creado dos para mostrar conocimientos. En esta capa se encuentra el repositorio
+	- **Data**: es la capa de datos, a través de la implementación del repositorio y el ApiService recoge los datos de la API. Tiene su propio modelo de datos, por lo que tiene que mapearlos al modelo de dominio.
+	- **Presentation**: es la capa de UI, cada pantalla tiene su propio directorio donde están incluidos los composables, los estados y los viewmodels de cada pantalla, existe también el directorio de navegación, que se encarga de gestionar toda la navegación a través de navigationwrapper. No dispone de modelo de datos propios por que no lo he creído necesario, usa el modelo de datos del dominio.
+	- **core**: Es un directorio general para toda la aplicación, en el he metido la inyección de dependencias por que afecta a todas la aplicacion y un archivo con algunas constantes necesarias para la app.
 
 ---
 
