@@ -43,9 +43,9 @@ Ejecuta en tu emulador o dispositivo.
 
 Hay algunas implementaciones que me hubiese gustado implementar pero me ha faltado tiempo:
 	- **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
-	- **Paginación**: la API lo permite, asi el listado de personajes podría salir entero.
+	- **Paginación**: la API lo permite, asi el listado de personajes podría salir entero. 
 	- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras
-	siempre apareciese el último que aparecido pero me quede sin tiempo para llevarlo a cabo.
+	siempre apareciese el último que aparecido pero me quede sin tiempo para llevarlo a cabo. 
 
 
 ##📜 Licencia
