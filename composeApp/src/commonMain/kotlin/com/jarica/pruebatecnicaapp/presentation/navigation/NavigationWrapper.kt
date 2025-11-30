@@ -32,6 +32,7 @@ fun NavigationWrapper() {
             DetailScreen(detailScreen.idCharacter, onBackPress = { navController.popBackStack() })
         }
 
+
         composable<HomeScreenObject> {
             HomeScreen(
                 onCharacterOfTheDayClick = { navController.navigate(CharacterOfTheDayScreenObject) },

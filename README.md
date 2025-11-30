@@ -1,35 +1,57 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+#  Prueba Técnica
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+[![Made with Kotlin](https://img.shields.io/badge/Made%20with-Kotlin-blueviolet)]()  
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Bienvenidos a la prueba técnica de Juan Antonio Rivero, he creado una aplicación simple, en la que se puede ver mi forma de programar,
+algunas de las herramientas que conozco, y la forma en la que estructuro el código.
 
-### Build and Run Android Application
+Los datos los he usado de la API publica de Rick & Morty - https://rickandmortyapi.com/
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+Lo primero que me gustaría comentar es que la aplicación esta solo comprobada en Android, no dispongo de entorno iOs, por lo que no es
+posible compilarla. Se podría compilar para iOs, pero me sorprendería que no crashease
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## ⚡ Instalación
+
+Clona el repositorio 
+La versión utilizada de Android Studio es Android Studio Otter | 2025.2.1
+Ejecuta en tu emulador o dispositivo.
+
+---
+
+## 📱 Tecnologías utilizadas
+- **Lenguaje**: Kotlin
+- **UI Framework**: Compose Multiplatform  
+- **Arquitectura**: 
+	- Clean Arquitecture
+	- MVVM (Model-View-ViewModel)
+	- Koin, para la inyección de dependencias.
+	- Coil, para la carga de imágenes de internet.
+	- Ktor, framework HTTP para APIs RESTful
+	
+---
+
+## 🚀 Features
+- **Listado de Personajes**: Se listan los 20 primeros personajes de la API, al no tener paginación la app y hacer una llamada completa.  
+- **Detalle del listado**: Al pulsar sobre cualquier elemento del listado muestra la información completa de cada elemento.  
+- **Mostrar personaje aleatorio**: Al pulsar un botón se muestra la información un personaje aleatorio de entre toda la API
+
+---
+
+
+
+##🐞 TODO
+Hay algunas implementaciones que me hubiese gustado implementar pero me ha faltado tiempo:
+	- **Vista de detalle con mas información**: Solo habría que actualizar los modelos de datos para recuperar mas información de la API.
+	- **Paginación**: la API lo permite, asi el listado de personajes podría salir entero.
+	- **Persistencia de Datos**: Mi primera idea era que el personaje random se guardase en persistencia de datos, para que de primeras
+	siempre apareciese el último que aparecido pero me quede sin tiempo para llevarlo a cabo.
+
+
+##📜 Licencia
+Este proyecto está bajo la licencia MIT.
+O sea: úsalo, compártelo, modifícalo... pero si tu grupo se pelea por culpa de la app, no es responsabilidad nuestra. 😅
+
+##👀 Nota final
+Recuerda: una amistad rota por 3€ no vale la pena... pero una app que te los recuerda sí.
