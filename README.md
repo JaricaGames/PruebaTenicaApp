@@ -57,11 +57,8 @@ Lo primero que me gustaría comentar es que la aplicación esta solo comprobada 
 - **Llamadas a EndPoint**
 - **Corrutinas**: Todas las llamadas a la API se realiza mediante corrutinas que se realizan fuera del hilo principal para no bloquearlo.
 - **Repositorio e implementación de repositorio**
-- **Compose Multiplatform**
-- **MVVM**
 - **Manejo de estados**: Tanto listScreen como characterOftheDayScreen tienen su propio manejo de estados. listScreenState tiene un manejo de datos con los estados, loading, error, success, y listScreen muestra un composable u otro depende del estado.
 - **Navigation Compose**: La navegación se realiza con navigation compose, como buena practica se pasa a las pantallas como navegar y no se pasa a las pantallas el navController directamente para que sea el NavigationWrapper y solo él quien se encargue de realizar navegaciones.
-- **Inyeccion de dependencias con Koin**:
 - **Creacion de composables personalizados**: He creado un botón personalizado para que sea el mismo en toda la app, asi el código queda mas limpio, ordenado, fácil de leer y es mucho mas escalable
 - **Encapsulacion de variables**: Las variables de los viewModel tiene su versión publica y privada, las screen se enganchan a las publicas que son solo de lectura para que sea solo el viewModel el que pueda modificarlas.
 
