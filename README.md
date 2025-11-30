@@ -13,10 +13,9 @@ posible compilarla. Se podría compilar para iOs, pero me sorprendería que no c
 ---
 
 ## ⚡ Instalación
-
-Clona el repositorio 
-La versión utilizada de Android Studio es Android Studio Otter | 2025.2.1
-Ejecuta en tu emulador o dispositivo.
+- Clona el repositorio 
+- La versión utilizada de Android Studio es Android Studio Otter | 2025.2.1
+- Ejecuta en tu emulador o dispositivo.
 
 ---
 
